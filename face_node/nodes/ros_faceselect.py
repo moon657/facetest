@@ -14,7 +14,7 @@ def detect_face(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     #加载OpenCV人脸检测分类器Haar
-    face_cascade = cv2.CascadeClassifier('/home/nanorobot/catkin_ws/src/face_node/nodes/haarcascade_frontalface_default.xml')
+    face_cascade = cv2.CascadeClassifier('/home/nanorobot/catkin_ws/src/facetest/face_node/nodes/haarcascade_frontalface_default.xml')
 
     #检测多尺度图像，返回值是一张脸部区域信息的列表（x,y,宽,高）
     faces = face_cascade.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5)
@@ -72,7 +72,7 @@ def prepare_training_data(data_folder_path):
     return faces, labels
 
 #调用prepare_training_data（）函数
-faces, labels = prepare_training_data("/home/nanorobot/catkin_ws/src/face_node/nodes/training_data")
+faces, labels = prepare_training_data("/home/nanorobot/catkin_ws/src/facetest/face_node/nodes/training_data")
 
 #创建LBPH识别器并开始训练，当然也可以选择Eigen或者Fisher识别器
 face_recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -121,10 +121,10 @@ photo = "/home/nanorobot/Desktop/photo.jpeg"
 os.system(command)#执行command所代表的指令，即拍照
 #加载测试图像
 img3 = cv2.imread(photo)
-test_img1 = cv2.imread("/home/nanorobot/catkin_ws/src/face_node/nodes/test_data/test2.jpeg")
-test_img2 = cv2.imread("/home/nanorobot/catkin_ws/src/face_node/nodes/test_data/test1.jpeg")
-test_img3 = cv2.imread("/home/nanorobot/catkin_ws/src/face_node/nodes/test_data/photo.jpeg")
-test_img4 = cv2.imread("/home/nanorobot/catkin_ws/src/face_node/nodes/test_data/404.jpeg")
+test_img1 = cv2.imread("/home/nanorobot/catkin_ws/src/facetest/face_node/nodes/test_data/test2.jpeg")
+test_img2 = cv2.imread("/home/nanorobot/catkin_ws/src/facetest/face_node/nodes/test_data/test1.jpeg")
+test_img3 = cv2.imread("/home/nanorobot/catkin_ws/src/facetest/face_node/nodes/test_data/photo.jpeg")
+test_img4 = cv2.imread("/home/nanorobot/catkin_ws/src/facetest/face_node/nodes/test_data/404.jpeg")
 
 #执行预测
 start = time.time()
