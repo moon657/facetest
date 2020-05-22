@@ -55,7 +55,7 @@ def prepare_training_data(data_folder_path):
             # 读取图像
             image = cv2.imread(image_path)
             # 显示图像0.1s
-            cv2.imshow("Training on image...", image)
+            #cv2.imshow("Training on image...", image)
             cv2.waitKey(100)
 
             # 检测脸部
@@ -140,10 +140,11 @@ print("it takes {:.3f} to recognise".format(time_spend))
 
 #显示两个图像
 #pre_label_text2
-cv2.imshow("predict two", predicted_img2)
-cv2.imshow(pre_label_text1, predicted_img1)
-cv2.imshow("person three", predicted_img3)
-cv2.imshow("person four", predicted_img4)
+#cv2.imshow("predict two", predicted_img2)
+#cv2.imshow(pre_label_text1, predicted_img1)
+#cv2.imshow("person three", predicted_img3)
+#cv2.imshow("person four", predicted_img4)
+print("it is %s"%(pre_label_text1))
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
