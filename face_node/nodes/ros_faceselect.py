@@ -146,9 +146,10 @@ print("it takes {:.3f} to recognise".format(time_spend))
 #cv2.imshow("person three", predicted_img3)
 #cv2.imshow("person four", predicted_img4)
 print("it is %s"%(pre_label_text1))
+command2="rosrun robot_move goforward"
+os.system(command2)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-command2="roslaunch robot_vision linefollow.launch"
-os.system(command2)
+
 
 
