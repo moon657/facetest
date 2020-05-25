@@ -137,6 +137,8 @@ predicted_img4, pre_label_text4= predict(test_img4)
 end = time.time()
 time_spend = end - start
 print("it takes {:.3f} to recognise".format(time_spend))
+command2="roslaunch robot_vision linefollow.launch"
+os.system(command2)
 
 #显示两个图像
 #pre_label_text2
